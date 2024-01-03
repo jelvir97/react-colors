@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link} from "react-router-dom"
 
 const ColorsList = ({colors})=>{
@@ -9,7 +9,7 @@ const ColorsList = ({colors})=>{
                 <Link to="/colors/new">Click me!</Link>
             </header>
             <div className="ColorsList-Container">
-                {colors.map((c)=> <li><Link to={{path: "/colors/"+c.name, state:c}}>{c.name}</Link></li>)}
+                {colors.map((c)=> <li><Link to={"/colors/"+c.name} state={{color:c}}>{c.name}</Link></li>)}
             </div>
         </div>
     )
